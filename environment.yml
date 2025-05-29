@@ -1,0 +1,14 @@
+name: lyra
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - ffmpeg
+  - pip:
+      - flask>=2.0.0
+      - git+https://github.com/openai/whisper.git
+      - edge-tts>=6.1.0
+      - openai>=1.0.0
+      - python-dotenv>=0.19.0

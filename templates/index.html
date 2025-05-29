@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyra</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="chat-header">
+            <div class="profile-info">
+                <div class="profile-picture">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQ1IiBmaWxsPSIjZmY5OGNjIiAvPgogICAgPGNpcmNsZSBjeD0iMzUiIGN5PSI0MCIgcj0iNSIgZmlsbD0iIzMzMyIgLz4KICAgIDxjaXJjbGUgY3g9IjY1IiBjeT0iNDAiIHI9IjUiIGZpbGw9IiMzMzMiIC8+CiAgICA8cGF0aCBkPSJNIDMwLDY1IFEgNTAsODAgNzAsNjUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiAvPgo8L3N2Zz4=" alt="Lyra">
+                </div>
+                <div class="user-info">
+                    <h3 class="username">Lyra <span class="status">在线</span></h3>
+                    <p class="mood" id="current-emotion">开心 😊</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="settings-btn"><i class="bi bi-gear"></i></button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            
+        </div>
+
+        <div class="chat-input-container">
+            <div class="input-actions">
+                <button id="toggle-voice-input" class="action-btn">
+                    <i class="bi bi-mic"></i>
+                </button>
+                <input type="file" id="image-upload" style="display: none">
+                <label for="image-upload" class="action-btn">
+                    <i class="bi bi-image"></i>
+                </label>
+            </div>
+            <div class="input-box">
+                <textarea id="message-input" placeholder="输入消息..."></textarea>
+                <button id="send-button" class="send-btn">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="recording-indicator" class="recording-indicator">
+            <div class="recording-pulse"></div>
+            <span>正在录音...</span>
+            <button id="stop-recording" class="stop-recording-btn">
+                <i class="bi bi-stop-fill"></i>
+            </button>
+        </div>
+
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>个人信息设置</h3>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>你的名字</label>
+                        <input type="text" id="user-name-input" placeholder="告诉Lyra你的名字">
+                    </div>
+                    <div class="form-group">
+                        <label>你的生日</label>
+                        <input type="date" id="user-birthday-input">
+                    </div>
+                    <div class="form-group">
+                        <label>你的喜好</label>
+                        <input type="text" id="user-interests-input" placeholder="你喜欢什么?">
+                    </div>
+                    <div class="form-group">
+                        <label>输出偏好</label>
+                        <select id="output-preference">
+                            <option value="auto">自动选择</option>
+                            <option value="text">仅文字</option>
+                            <option value="voice">优先语音</option>
+                        </select>
+                    </div>
+                    <button id="save-settings" class="save-settings-btn">保存设置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
